@@ -5,14 +5,14 @@ function ItemCount (props){
     const [count, setCount]= useState(props.initial);
     
     function handleAdd(){
-        if(count=== "+" && count < props.stock){
+        if(count < props.stock){
           setCount(count +1) ; 
         }
         
     }
 
     function handleSubstract(){
-        if(count=== "-" && count> props.initial){
+        if(count> props.initial){
            setCount(count -1) 
         }   
     }
