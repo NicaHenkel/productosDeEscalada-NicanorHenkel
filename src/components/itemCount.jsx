@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 
 function ItemCount (props){
-    const [count, setCount]= useState(props.initial);
+    const [count, setCount, onAdd]= useState(props.initial);
     
     function handleAdd(){
         if(count < props.stock){
@@ -17,7 +17,9 @@ function ItemCount (props){
         }   
     }
     function handleOnAdd(){
-
+        if (props.stock> 0 && count< props.stock){
+            props.onAdd(count)
+        }
     }
     return (
         <div>
